@@ -1,0 +1,21 @@
+{
+    "name": "com.gamecore.generalextensions",
+    "version": "0.0.1",
+    "displayName": "GeneralExtensions",
+    "description": "Common extensions and helpers classes",
+    "unity": "6000.3",
+    "dependencies": {        
+    },
+    "keywords": [
+        "GeneralExtensions"
+    ],
+    "contributors": [
+        "Ognev Aleksandr"
+    ],
+    "documentationUrl": "",
+    "author": {
+        "name": "Ognev Aleksandr",
+        "email": "keeper309@gmail.com",
+        "url": "https://github.com/keeper309"
+    }
+}
