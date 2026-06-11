@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace GameCore.GeneralExtensions
@@ -104,6 +105,41 @@ namespace GameCore.GeneralExtensions
 
             string sanitized = NonAlphanumericRegex.Replace(s.ToLower().Replace(' ', '_'), "");
             return sanitized.Length > 0 ? sanitized : null;
+        }
+
+        public static bool IsFirstLetterNumber(this string source)
+        {
+            return !source.IsNullOrEmpty() && char.IsNumber(source[0]);
+        }
+
+        public static string ToPascalCase(this string source)
+        {
+            return ToPascalCase(source, new[] { '_', '-', ' ' });
+        }
+
+        public static string ToPascalCase(this string source, char[] delimiters)
+        {
+            string[] words = source.Split(delimiters);
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (string word in words)
+            {
+                sb.Append(ToUpperFirstLetter(word));
+            }
+
+            return sb.ToString();
+        }
+
+        public static string ToUpperFirstLetter(this string source)
+        {
+            if (source.IsNullOrEmpty())
+                return string.Empty;
+
+            char[] letters = source.ToCharArray();
+            letters[0] = char.ToUpper(letters[0]);
+
+            return new string(letters);
         }
     }
 }
