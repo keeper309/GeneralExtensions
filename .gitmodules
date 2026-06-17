@@ -1,4 +1,0 @@
-[submodule "Assets/External/LoggerService"]
-	path = Assets/External/LoggerService
-	url = git@github.com:keeper309/LoggerService.git
-	branch = master
