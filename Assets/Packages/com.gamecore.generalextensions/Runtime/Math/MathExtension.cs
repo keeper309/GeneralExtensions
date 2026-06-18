@@ -148,5 +148,26 @@ namespace GameCore.GeneralExtensions
 #endif
             return new Vector2(screenSize.x / dpi * Inch2Cm, screenSize.y / dpi * Inch2Cm);
         }
+
+        public static float FlatAngleY(Vector3 to)
+        {
+            Vector2 to2 = new Vector2(to.x, to.z).normalized;
+            float angle = Vector2.Angle(Vector2.up, to2);
+            if (to2.x < 0)
+                angle = 360 - angle;
+
+            return angle;
+        }
+
+        public static float CorrectAngle_m180_p180(float angle)
+        {
+            while (angle < -180)
+                angle += 360;
+
+            while (angle > 180)
+                angle -= 360;
+
+            return angle;
+        }
     }
 }
