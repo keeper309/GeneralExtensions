@@ -27,5 +27,39 @@ namespace GameCore.GeneralExtensions
 
             return result;
         }
+
+        //
+        // Summary:
+        //     Returns a Rect, with the specified width, that has been aligned to the right
+        //     of the original Rect.
+        //
+        // Parameters:
+        //   rect:
+        //     The original Rect.
+        //
+        //   width:
+        //     The desired width of the new Rect.
+        public static Rect AlignRight(this Rect rect, float width)
+        {
+            rect.x = rect.x + rect.width - width;
+            rect.width = width;
+            return rect;
+        }
+
+        //
+        // Summary:
+        //     Subtracts a Rect's X max position.
+        //
+        // Parameters:
+        //   rect:
+        //     The original Rect.
+        //
+        //   value:
+        //     The value to subtract.
+        public static Rect SubXMax(this Rect rect, float value)
+        {
+            rect.xMax -= value;
+            return rect;
+        }
     }
 }
